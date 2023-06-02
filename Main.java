@@ -14,7 +14,7 @@ public class Main {
     }
 
     private static boolean isPolyndrom(String value){
-        StringBuilder sb =new StringBuilder(value);
+        StringBuilder sb = new StringBuilder(value);
         String valueReversed = sb.reverse().toString();
         return value.equals(valueReversed);
     }
