@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args){
         int varA = 2;
@@ -7,9 +9,18 @@ public class Main {
         System.out.println("Division: " + (varA / varB));
         System.out.println("Multiplication: " + (varA * varB));
 
-        String value = "qwerrewq";
+        System.out.println(isPolyndrom("qwerrewq"));
+        System.out.println(checkOccurences("Try your skill", "your"));
+    }
+
+    private static boolean isPolyndrom(String value){
         StringBuilder sb =new StringBuilder(value);
         String valueReversed = sb.reverse().toString();
-        System.out.println(value.equals(valueReversed));
+        return value.equals(valueReversed);
+    }
+
+    private static int checkOccurences(String phrase, String valueToSearch){
+        String[] array = phrase.split(" ");
+        return (int) Arrays.stream(array).filter(x -> x.equals(valueToSearch)).count();
     }
 }
